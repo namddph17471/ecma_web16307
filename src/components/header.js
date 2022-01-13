@@ -21,7 +21,7 @@ const Header = {
           <a class="new-item" href="/news">Góc sinh viên</a>
         </li>
         <li>
-          <a class="new-item" href="/sigin">Tuyển dụng</a>
+          <a class="new-item" href="/signin">Tuyển dụng</a>
         </li>
       </ul>
       <input class="bg-[#fff]" type="text" name="" id="" />
