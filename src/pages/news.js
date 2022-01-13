@@ -1,10 +1,13 @@
 import NewList from "../components/NewList";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 const NewsPage = {
     render() {
         return `
-            <h1>News Page</h1>
+        ${Header.render()}
             ${NewList.render()}
+        ${Footer.render()}
         `;
     },
 };

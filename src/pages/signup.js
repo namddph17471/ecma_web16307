@@ -1,6 +1,10 @@
+import Header from "../components/header";
+import Footer from "../components/footer";
+
 const Signup = {
     render() {
         return /* html */ `
+        ${Header.render()}
             <h1 class="font-bold uppercase mb-4 text-2xl my-8 text-center text-indigo-600">Đăng Ký Tài Khoản</h1>
             <div class="min-h-full flex items-center justify-center py-3 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-4">
@@ -42,12 +46,13 @@ const Signup = {
               <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
             </svg>
           </span>
-          Đăng nhập
+          Đăng Ký
         </button>
       </div>
     </form>
   </div>
 </div>
+${Footer.render()}
         `;
     },
 };

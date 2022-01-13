@@ -1,7 +1,9 @@
 import Navigo from "navigo";
-import Footer from "./components/footer";
-import Header from "./components/header";
 import AboutPage from "./pages/about";
+import DashboardPage from "./pages/admin/dashboard";
+import AdminNewsPage from "./pages/admin/news";
+import AddNewsPage from "./pages/admin/news/add";
+import EditNewPage from "./pages/admin/news/edit";
 import DetailNewPage from "./pages/detailNew";
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
@@ -12,8 +14,6 @@ import Signup from "./pages/signup";
 const router = new Navigo("/", { linksSelector: "a" });
 const print = (content) => {
     document.getElementById("app").innerHTML = content;
-    document.getElementById("header").innerHTML = Header.render();
-    document.getElementById("footer").innerHTML = Footer.render();
 };
 router.on({
     "/": () => {
@@ -35,8 +35,22 @@ router.on({
     "/signin": () => {
         print(Signin.render());
     },
-    "signup/": () => {
+    "/signup": () => {
         print(Signup.render());
     },
+    "/admin/dashboard": () => {
+        print(DashboardPage.render());
+    },
+    "/admin/news": () => {
+        print(AdminNewsPage.render());
+    },
+    "/admin/news/add": () => {
+        print(AddNewsPage.render());
+    },
+    "/admin/news/:id": ({ data }) => {
+        const { id } = data;
+        print(EditNewPage.render(id));
+    },
+
 });
 router.resolve();
