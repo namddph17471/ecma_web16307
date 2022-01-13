@@ -4,6 +4,7 @@ import Header from "./components/header";
 import AboutPage from "./pages/about";
 import DetailNewPage from "./pages/detailNew";
 import HomePage from "./pages/home";
+import NewsPage from "./pages/news";
 import ProductPage from "./pages/products";
 
 const router = new Navigo("/", { linksSelector: "a" });
@@ -21,6 +22,9 @@ router.on({
     },
     "/product": () => {
         print(ProductPage.render());
+    },
+    "/news": () => {
+        print(NewsPage.render());
     },
     "/news/:id": ({ data }) => {
         const { id } = data;

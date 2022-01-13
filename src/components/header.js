@@ -18,7 +18,7 @@ const Header = {
           <a class="new-item" href="/product">CHương trình đào tạo</a>
         </li>
         <li>
-          <a class="new-item" href="">Góc sinh viên</a>
+          <a class="new-item" href="/news">Góc sinh viên</a>
         </li>
         <li>
           <a class="new-item" href="">Tuyển dụng</a>
