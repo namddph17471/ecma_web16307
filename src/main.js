@@ -6,6 +6,7 @@ import DetailNewPage from "./pages/detailNew";
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import ProductPage from "./pages/products";
+import Sigin from "./pages/sigin";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const print = (content) => {
@@ -29,6 +30,9 @@ router.on({
     "/news/:id": ({ data }) => {
         const { id } = data;
         print(DetailNewPage.render(id));
+    },
+    "/sigin": () => {
+        print(Sigin.render());
     },
 });
 router.resolve();
