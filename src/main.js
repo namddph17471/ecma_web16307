@@ -47,7 +47,7 @@ router.on({
     "/admin/news/add": () => {
         print(AddNewsPage.render());
     },
-    "/admin/news/:id": ({ data }) => {
+    "/admin/news/edit/:id": ({ data }) => {
         const { id } = data;
         print(EditNewPage.render(id));
     },

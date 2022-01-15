@@ -23,7 +23,7 @@ const AdminNewsPage = {
                             </div>
                         </div>
                         </div>
-                </header>
+                  </header>
                     <main>
                         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                             <div class="px-4 py-6 sm:px-0">
@@ -75,7 +75,7 @@ const AdminNewsPage = {
                                                             </div>
                                                           </td>
                                                           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                            <a href="/admin/news/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                            <a href="/admin/news/edit/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                                           </td>
                                                         </tr>
                                                         `).join("")}
