@@ -37,7 +37,7 @@
             "dest": "/"
         },
         {
-            "src": "/admin/news/them",
+            "src": "/admin/news/add",
             "dest": "/"
         },
         {
