@@ -1,10 +1,10 @@
 import Banner from "../components/banner";
 import NewList from "../components/NewList";
-import Header from "../components/header";
 import Footer from "../components/footer";
+import Header from "../components/header";
 
 const HomePage = {
-    async render() {
+    render() {
         return /* html */`
         ${Header.render()}
             <div class="max-w-5xl mx-auto">
@@ -12,10 +12,10 @@ const HomePage = {
                    ${Banner.render()}
                 </div>
                 <div class="news">
-                    ${await NewList.render()}
+                    ${NewList.render()}
                 </div>
             </div>
-        ${Footer.render()}
+            ${Footer.render()}
         `;
     },
 };

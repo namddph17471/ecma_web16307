@@ -1,7 +1,7 @@
+import data from "../data";
+
 const NewList = {
-    async render() {
-        const response = await fetch("http://localhost:3001/posts");
-        const data = await response.json();
+    render() {
         return /* html */`
         <div class="py-3">
             <h2 class="font-bold uppercase mb-4 text-2xl">Tin Tức nổi bật</h2>
