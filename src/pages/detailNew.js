@@ -1,16 +1,16 @@
-import data from "../data";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
 const DetailNewPage = {
-    render(id) {
-        const found = data.find((element) => element.id === id);
+    async render(id) {
+        const response = await fetch(`http://localhost:3001/posts/${id}`);
+        const data = await response.json();
         return `
         ${Header.render()}
         <div class="max-w-5xl mx-auto">
-            <h1 class="font-bold uppercase mb-4 text-2xl">${found.title}</h1>
-            <img src="${found.img}" />
-            <p>${found.desc}</p>
+            <h1 class="font-bold uppercase mb-4 text-2xl">${data.title}</h1>
+            <img src="${data.img}" />
+            <p>${data.desc}</p>
         </div>
         ${Footer.render()}
         `;

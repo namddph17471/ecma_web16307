@@ -9,7 +9,7 @@ const Header = {
         <div  class="flex bg-[#ca7802] py-[5px]">
         <ul class="flex bg-[#ca7802] text-center">
         <li>
-          <a class="new-item" href="">Trang chủ</a>
+          <a class="new-item" href="/">Trang chủ</a>
         </li>
         <li>
           <a class="new-item" href="/about">Tuyển sinh</a>

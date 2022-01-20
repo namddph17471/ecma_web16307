@@ -12,26 +12,18 @@ import Signin from "./pages/signin";
 import Signup from "./pages/signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const print = (content) => {
-    document.getElementById("app").innerHTML = content;
+const print = async (content, id) => {
+    document.getElementById("app").innerHTML = await content.render(id);
 };
 router.on({
-    "/": () => {
-        print(HomePage.render());
-    },
-    "/about": () => {
-        print(AboutPage.render());
-    },
-    "/product": () => {
-        print(ProductPage.render());
-    },
-    "/news": () => {
-        print(NewsPage.render());
-    },
-    "/news/:id": ({ data }) => {
-        const { id } = data;
-        print(DetailNewPage.render(id));
-    },
+    "/": () => print(HomePage),
+    "/about": () => print(AboutPage),
+
+    "/product": () => print(ProductPage),
+
+    "/news": () => print(NewsPage),
+
+    "/news/:id": ({ data }) => print(DetailNewPage, data.id),
     "/signin": () => {
         print(Signin.render());
     },
