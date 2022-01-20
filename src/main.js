@@ -24,12 +24,9 @@ router.on({
     "/news": () => print(NewsPage),
 
     "/news/:id": ({ data }) => print(DetailNewPage, data.id),
-    "/signin": () => {
-        print(Signin.render());
-    },
-    "/signup": () => {
-        print(Signup.render());
-    },
+    "/signin": () => print(Signin),
+    "/signup": () => print(Signup),
+
     "/admin/dashboard": () => {
         print(DashboardPage.render());
     },
