@@ -1,38 +1,48 @@
 import Navigo from "navigo";
-import Footer from "./components/footer";
-import Header from "./components/header";
 import AboutPage from "./pages/about";
+import DashboardPage from "./pages/admin/dashboard";
+import AdminNewsPage from "./pages/admin/news";
+import AddNewsPage from "./pages/admin/news/add";
+import EditNewPage from "./pages/admin/news/edit";
 import DetailNewPage from "./pages/detailNew";
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import ProductPage from "./pages/products";
-import Sigin from "./pages/sigin";
+import Signin from "./pages/signin";
+import Signup from "./pages/signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const print = (content) => {
-    document.getElementById("app").innerHTML = content;
-    document.getElementById("header").innerHTML = Header.render();
-    document.getElementById("footer").innerHTML = Footer.render();
+const print = async (content, id) => {
+    document.getElementById("app").innerHTML = await content.render(id);
 };
 router.on({
-    "/": () => {
-        print(HomePage.render());
+    "/": () => print(HomePage),
+    "/about": () => print(AboutPage),
+
+    "/product": () => print(ProductPage),
+
+    "/news": () => print(NewsPage),
+
+    "/news/:id": ({ data }) => print(DetailNewPage, data.id),
+    "/signin": () => {
+        print(Signin.render());
     },
-    "/about": () => {
-        print(AboutPage.render());
+    "/signup": () => {
+        print(Signup.render());
     },
-    "/product": () => {
-        print(ProductPage.render());
+    "/admin/dashboard": () => {
+        print(DashboardPage.render());
     },
-    "/news": () => {
-        print(NewsPage.render());
+    "/admin/news": () => {
+        print(AdminNewsPage.render());
     },
-    "/news/:id": ({ data }) => {
+    "/admin/news/add": () => {
+        print(AddNewsPage.render());
+    },
+    "/admin/news/edit/:id": ({ data }) => {
         const { id } = data;
-        print(DetailNewPage.render(id));
+        print(EditNewPage.render(id));
     },
-    "/sigin": () => {
-        print(Sigin.render());
-    },
+
 });
 router.resolve();
