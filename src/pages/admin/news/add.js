@@ -1,4 +1,5 @@
 import axios from "axios";
+import { add } from "../../../api/post";
 import Nav from "../../../components/nav";
 
 const AddNewsPage = {
@@ -68,13 +69,13 @@ const AddNewsPage = {
                     "Content-Type": "application/form-data",
                 },
             });
-            const dataFake = {
-                title: document.querySelector("#title").value,
-                img: respone.data.url,
-                desc: document.querySelector("#desc").value,
-            };
-            // call api thêm sản phẩm
-            axios.post("http://localhost:3001/posts", dataFake);
+            add(
+                {
+                    title: document.querySelector("#title").value,
+                    img: respone.data.url,
+                    desc: document.querySelector("#desc").value,
+                },
+            );
         });
     },
 };

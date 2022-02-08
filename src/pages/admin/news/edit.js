@@ -1,9 +1,9 @@
-import axios from "axios";
+import { get } from "../../../api/post";
 import Nav from "../../../components/nav";
 
 const EditNewPage = {
     async render(id) {
-        const { data } = await axios.get(`http://localhost:3001/posts/${id}`);
+        const { data } = await get(id);
         return /* html */`
         ${Nav.render()}
             <header class="bg-white shadow">
@@ -54,17 +54,17 @@ const EditNewPage = {
             </div>
         `;
     },
-    afterRender(id) {
-        const formEdit = document.querySelector("#form-edit-post");
-        formEdit.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const dataFake = {
-                title: document.querySelector("#title").value,
-                desc: document.querySelector("#desc").value,
-            };
-            // call api thêm sản phẩm
-            axios.post("http://localhost:3001/posts", dataFake);
-        });
-    },
+    // afterRender(id) {
+    //     const formEdit = document.querySelector("#form-edit-post");
+    //     formEdit.addEventListener("submit", (e) => {
+    //         e.preventDefault();
+    //         const dataFake = {
+    //             title: document.querySelector("#title").value,
+    //             desc: document.querySelector("#desc").value,
+    //         };
+    //         // call api thêm sản phẩm
+    //         axios.post("http://localhost:3001/posts", dataFake);
+    //     });
+    // },
 };
 export default EditNewPage;

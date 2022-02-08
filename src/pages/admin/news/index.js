@@ -1,9 +1,9 @@
-import axios from "axios";
+import { getAll } from "../../../api/post";
 import Nav from "../../../components/nav";
 
 const AdminNewsPage = {
     async render() {
-        const { data } = await axios.get("http://localhost:3001/posts");
+        const { data } = await getAll();
         return /* html */ `
             ${Nav.render()}
                 <header class="bg-white shadow">

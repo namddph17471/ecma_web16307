@@ -1,8 +1,8 @@
-import axios from "axios";
+import { getAll } from "../api/post";
 
 const NewList = {
     async render() {
-        const { data } = await axios.get("http://localhost:3001/posts");
+        const { data } = await getAll();
         return /* html */`
         <div class="py-3">
             <h2 class="font-bold uppercase mb-4 text-2xl">Tin Tức nổi bật</h2>
