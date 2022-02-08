@@ -1,8 +1,9 @@
+import axios from "axios";
 import Nav from "../../../components/nav";
-import data from "../../../data";
 
 const AdminNewsPage = {
-    render() {
+    async render() {
+        const { data } = await axios.get("http://localhost:3001/posts");
         return /* html */ `
             ${Nav.render()}
                 <header class="bg-white shadow">
@@ -14,7 +15,7 @@ const AdminNewsPage = {
                             </h2>
                             </div>
                             <div class="mt-5 flex lg:mt-0 lg:ml-4">
-                            <a href="/admin/news/add" class="sm:ml-3">
+                            <a href="/#/admin/news/add" class="sm:ml-3">
                                 <button type="button"
                                 class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 Thêm mới
@@ -36,32 +37,30 @@ const AdminNewsPage = {
                                                     <thead class="bg-gray-50">
                                                       <tr>
                                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                        STT
+                                                        </th>
+                                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                           Image
                                                         </th>
                                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                           Title
                                                         </th>
-                                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                          Content
-                                                        </th>
+                                                        
                                                         <th scope="col" class="relative px-6 py-3">
                                                           <span class="sr-only">Edit</span>
                                                         </th>
                                                       </tr>
                                                     </thead>
                                                     <tbody class="bg-white divide-y divide-gray-200">
-                                                        ${data.map((post) =>/* html */ `
+                                                        ${data.map((post, index) =>/* html */ `
                                                         <tr>
+                                                          <td class="px-6 py-4 whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">${index + 1}</div>
+                                                          </td>
                                                           <td class="px-6 py-4 whitespace-nowrap">
                                                             <div class="flex items-center">
                                                               <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full" src="${post.img}" alt="">
-                                                              </div>
-                                                              <div class="ml-4">
-                                                                <div class="text-sm font-medium text-gray-900">
-
-                                                                </div>
-
+                                                                <img class="h-10 w-10 " src="${post.img}" alt="">
                                                               </div>
                                                             </div>
                                                           </td>
@@ -69,13 +68,12 @@ const AdminNewsPage = {
                                                             <div class="text-sm text-gray-900">${post.title}</div>
 
                                                           </td>
-                                                          <td class="px-6 py-4 whitespace-nowrap ">
-                                                            <div class="text-sm text-gray-500">
-                                                            ${post.desc}
-                                                            </div>
-                                                          </td>
+                                                          
                                                           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                            <a href="/admin/news/edit/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                            <button class="btn bg-indigo-600">
+                                                            <a href="/#/admin/news/edit/${post.id}" class="text-white p-3  hover:text-white-900">Edit</a>
+                                                            </button>
+                                                            <a href="/#/admin/news/delete/${post.id}" class="text-red-600  p-3 hover:text-indigo-900">Delete</a>
                                                           </td>
                                                         </tr>
                                                         `).join("")}

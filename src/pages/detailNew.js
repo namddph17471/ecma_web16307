@@ -1,10 +1,11 @@
+import axios from "axios";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
 const DetailNewPage = {
     async render(id) {
-        const response = await fetch(`http://localhost:3001/posts/${id}`);
-        const data = await response.json();
+        const { data } = await axios.get(`http://localhost:3001/posts/${id}`);
+
         return `
         ${Header.render()}
         <div class="max-w-5xl mx-auto">

@@ -10,21 +10,21 @@ const Nav = {
               </div>
               <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                  <a href="/admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  <a href="/#/admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                     aria-current="page">Dashboard</a>
   
-                  <a href="/admin/news"
+                  <a href="/#/admin/news"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">News</a>
   
-                  <a href="/admin/products"
+                  <a href="/#/admin/products"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Products</a>
   
-                  <a href="/admin/orders"
+                  <a href="/#/admin/orders"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Order</a>
   
-                  <a href="/admin/settings"
+                  <a href="/#/admin/settings"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Settings</a>
-                  <a href="/"
+                  <a href="/#/"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                 </div>
               </div>
@@ -87,21 +87,21 @@ const Nav = {
   
         <div class="md:hidden" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/admin/dashboard" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+            <a href="/#/admin/dashboard" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
               aria-current="page">Dashboard</a>
   
-            <a href="/admin/news"
+            <a href="/#/admin/news"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</a>
   
-            <a href="/admin/products"
+            <a href="/#/admin/products"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Products</a>
   
-            <a href="/admin/orders"
+            <a href="/#/admin/orders"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Orders</a>
   
-            <a href="/admin/settings"
+            <a href="/#/admin/settings"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Settings</a>
-            <a href="/"
+            <a href="/#/"
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
           </div>
           <div class="pt-4 pb-3 border-t border-gray-700">

@@ -3,10 +3,10 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 
 const NewsPage = {
-    render() {
+    async render() {
         return `
         ${Header.render()}
-            ${NewList.render()}
+            ${await NewList.render()}
         ${Footer.render()}
         `;
     },

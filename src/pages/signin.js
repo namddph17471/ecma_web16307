@@ -41,7 +41,7 @@ const Signin = {
                 <div class="text-sm">
                   <p>
                   Bạn chưa có tài khoản?
-                  <a href="/signup" class="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="/#/signup" class="font-medium text-indigo-600 hover:text-indigo-500">
                       Đăng ký
                   </a>
                   </p>

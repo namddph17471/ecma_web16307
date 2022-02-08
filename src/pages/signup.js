@@ -30,7 +30,7 @@ const Signup = {
       <div class="text-sm">
       <p>
       Bạn đã có tài khoản?
-      <a href="/signin" class="font-medium text-indigo-600 hover:text-indigo-500">
+      <a href="/#/signin" class="font-medium text-indigo-600 hover:text-indigo-500">
           Đăng Nhập
       </a>
       </p>
