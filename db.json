@@ -1,13 +1,6 @@
 {
   "posts": [
     {
-      "createdAt": "2022-01-15T01:54:24.955Z",
-      "title": "Tiffany Wisoky",
-      "img": "http://placeimg.com/640/480/cats",
-      "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-      "id": "8"
-    },
-    {
       "createdAt": "2022-01-15T02:36:13.715Z",
       "title": "Mr. Doug Purdy",
       "img": "http://placeimg.com/640/480/nature",
@@ -28,16 +21,10 @@
       "id": "aHx-WBx"
     },
     {
-      "title": "thêm bài viết 02",
-      "img": "http://placeimg.com/640/480/people",
-      "desc": "thêm bài 02",
-      "id": "7QavqBS"
-    },
-    {
-      "title": "thêm mới bài viết 03",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644300238/pgdmj0mguvlmstmcnroq.png",
-      "desc": "thêm mới",
-      "id": "VjSlEBb"
+      "title": "thêm bài ms",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644314004/mffrunbtlsbmcew5dej1.png",
+      "desc": "thêm bài ms",
+      "id": "tfAMW_S"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { getAll } from "../../../api/post";
+import { getAll, remove } from "../../../api/post";
 import Nav from "../../../components/nav";
 
 const AdminNewsPage = {
@@ -70,10 +70,10 @@ const AdminNewsPage = {
                                                           </td>
                                                           
                                                           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                            <button class="btn bg-indigo-600">
-                                                            <a href="/#/admin/news/edit/${post.id}" class="text-white p-3  hover:text-white-900">Edit</a>
+                                                            <button class=" bg-indigo-600">
+                                                            <a href="/#/admin/news/edit/${post.id}" class=" bg-indigo-900 text-white p-3 rounded  hover:text-white-900">Edit</a>
                                                             </button>
-                                                            <a href="/#/admin/news/delete/${post.id}" class="text-red-600  p-3 hover:text-indigo-900">Delete</a>
+                                                            <button data-id="${post.id}" class="btn bg-red-500 text-white inline-block py-3 px-5 rounded  hover:text-indigo-900">Delete</button>
                                                           </td>
                                                         </tr>
                                                         `).join("")}
@@ -88,6 +88,21 @@ const AdminNewsPage = {
                         </div>
                     </main>
         `;
+    },
+    afterRender() {
+        // Lấy danh sách button
+        const btns = document.querySelectorAll(".btn");
+        // tạo vòng lặp và lấy ra từng button
+        btns.forEach((btn) => {
+            const { id } = btn.dataset;
+            // Viết sự kiện khi click vào button call api và xóa sản phẩm
+            btn.addEventListener("click", () => {
+                const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
+                if (confirm) {
+                    remove(id);
+                }
+            });
+        });
     },
 };
 export default AdminNewsPage;
