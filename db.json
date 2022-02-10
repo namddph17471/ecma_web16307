@@ -15,12 +15,6 @@
       "id": "10"
     },
     {
-      "title": "thêm bài ms",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644314004/mffrunbtlsbmcew5dej1.png",
-      "desc": "thêm bài ms",
-      "id": "tfAMW_S"
-    },
-    {
       "title": "Trương huyền",
       "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644315848/peyfyug6yi8a6phowigm.jpg",
       "desc": "1 trg tứ đại",
@@ -33,10 +27,18 @@
       "id": "1W804ce"
     },
     {
-      "title": "bài viết 03",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644317188/yh1wundtltbmnktbcw38.jpg",
-      "desc": "bài viết 03",
-      "id": "HH_LD6C"
+      "title": "Thêm bài viết",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644470406/tdujdnlrujuvizgkhumd.jpg",
+      "desc": "thêm bài viết",
+      "id": "HdHHmjg"
+    }
+  ],
+  "users": [
+    {
+      "email": "user1@gmail.com",
+      "password": "$2a$10$XYnSpFKHBHaZX6LUipesN.xJS9Kx7ezqeqS87qYWP85A/1m85UBRa",
+      "username": "vothuy",
+      "id": 1
     }
   ]
 }
