@@ -26,9 +26,9 @@ const AdminNewsPage = {
                         </div>
                   </header>
                     <main>
-                        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                            <div class="px-4 py-6 sm:px-0">
-                                <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
+                        <div class="max-w-7xl mx-auto py-6 ">
+                            <div class="px-4 py-3 sm:px-0">
+                                <div class=" rounded-lg ">
                                     <div class="flex flex-col max-w-5xl mx-auto">
                                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
