@@ -64,8 +64,10 @@ const Signup = {
                 username: document.querySelector("#user_name").value,
                 email: document.querySelector("#email").value,
                 password: document.querySelector("#password").value,
+            }).then(() => {
+                alert("Bạn đã đăng ký thành công");
+                window.location.href = "/#/";
             });
-            window.location.href = "/#/";
         });
     },
 };

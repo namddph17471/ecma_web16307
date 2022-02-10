@@ -1,3 +1,4 @@
+import { signin } from "../api/user";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
@@ -9,12 +10,12 @@ const Signin = {
           <div class="min-h-full flex items-center justify-center py-3 px-4 sm:px-6 lg:px-8">
             <div class="max-w-md w-full space-y-8">
 
-              <form class="mt-8 space-y-6" action="#" method="POST">
+              <form class="mt-8 space-y-6" action="#" id="form-signin" method="POST">
                 <input type="hidden" name="remember" value="true">
                 <div class="rounded-md shadow-sm -space-y-px">
                   <div class="my-4 py-2">
-                    <label for="email-address" class="font-medium text-indigo-600 hover:text-indigo-500 ">Email address</label>
-                    <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+                    <label class="font-medium text-indigo-600 hover:text-indigo-500" for="email-address" >Email address</label>
+                    <input id="email"  name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
                   </div>
                   <div class="my-4 py-2">
                     <label for="password" class="font-medium text-indigo-600 hover:text-indigo-500 ">Password</label>
@@ -61,6 +62,19 @@ const Signin = {
             </div>
             ${Footer.render()}
         `;
+    },
+    afterRender() {
+        const formSignin = document.querySelector("#form-signin");
+        formSignin.addEventListener("submit", (e) => {
+            e.preventDefault();
+            signin({
+                email: document.querySelector("#email").value,
+                password: document.querySelector("#password").value,
+            }).then(() => {
+                alert("Bạn đã đăng nhập thành công");
+                window.location.href = "/#/";
+            });
+        });
     },
 };
 export default Signin;

@@ -15,22 +15,10 @@
       "id": "10"
     },
     {
-      "title": "Trương huyền",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644315848/peyfyug6yi8a6phowigm.jpg",
-      "desc": "1 trg tứ đại",
-      "id": "OmDu4Ma"
-    },
-    {
-      "title": "vô thủy ",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644316068/fquqi1cahkikdxnt4csg.jpg",
-      "desc": "Cuối đường tiên lộ ai vấn đỉnh, vừa thấy Vô Thủy đạo thành không.",
-      "id": "1W804ce"
-    },
-    {
-      "title": "Thêm bài viết",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644470406/tdujdnlrujuvizgkhumd.jpg",
-      "desc": "thêm bài viết",
-      "id": "HdHHmjg"
+      "title": "thêm bài viết 01",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644474661/rewuddgxhh0xwuom1z0x.jpg",
+      "desc": "thêm bài viết 01",
+      "id": "pHHxQGG"
     }
   ],
   "users": [
@@ -39,6 +27,18 @@
       "password": "$2a$10$XYnSpFKHBHaZX6LUipesN.xJS9Kx7ezqeqS87qYWP85A/1m85UBRa",
       "username": "vothuy",
       "id": 1
+    },
+    {
+      "email": "user32@gmail.com",
+      "password": "$2a$10$ZhGQR4jdoaBER6L1py32uOho1nW6Myuk9wV9TqX1/VziROAT53i3m",
+      "username": "tukhuyet",
+      "id": 2
+    },
+    {
+      "email": "vothuy@gmail.com",
+      "password": "$2a$10$mToTe6GQp8a828mHiLL0rO1wwpNBIoXTRwHq58HJlA4pE9jLllGby",
+      "username": "vothuy1",
+      "id": 3
     }
   ]
 }

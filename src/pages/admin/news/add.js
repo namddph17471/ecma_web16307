@@ -75,7 +75,10 @@ const AddNewsPage = {
                     img: respone.data.url,
                     desc: document.querySelector("#desc").value,
                 },
-            );
+            ).then(() => {
+                window.location.href = "/#/admin/news";
+                alert("Bạn đã thêm  thành công");
+            });
         });
     },
 };
