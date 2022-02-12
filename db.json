@@ -1,11 +1,10 @@
 {
   "posts": [
     {
-      "createdAt": "2022-01-15T02:36:13.715Z",
-      "title": "Mr. Doug Purdy",
-      "img": "http://placeimg.com/640/480/nature",
-      "desc": "The Football Is Good For Training And Recreational Purposes",
-      "id": "9"
+      "id": "9",
+      "title": "đã sửa",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644489668/ikh35qqoo6cgrpx2u8dy.jpg",
+      "desc": "js,cnbkalhcalmn zxkcjs"
     },
     {
       "createdAt": "2022-01-14T12:38:27.738Z",
@@ -15,17 +14,17 @@
       "id": "10"
     },
     {
-      "title": "thêm bài viết 01",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644474661/rewuddgxhh0xwuom1z0x.jpg",
-      "desc": "thêm bài viết 01",
-      "id": "pHHxQGG"
+      "id": "pHHxQGG",
+      "title": "vô thủy",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644490041/s2w7plojxrbf9beagykf.jpg",
+      "desc": "đại hải thật"
     }
   ],
   "users": [
     {
-      "email": "user1@gmail.com",
+      "email": "admin@gmail.com",
       "password": "$2a$10$XYnSpFKHBHaZX6LUipesN.xJS9Kx7ezqeqS87qYWP85A/1m85UBRa",
-      "username": "vothuy",
+      "username": "admin",
       "id": 1
     },
     {
@@ -39,6 +38,18 @@
       "password": "$2a$10$mToTe6GQp8a828mHiLL0rO1wwpNBIoXTRwHq58HJlA4pE9jLllGby",
       "username": "vothuy1",
       "id": 3
+    },
+    {
+      "email": "lythatda@gmail.com",
+      "password": "$2a$10$quy7NJKcv.ojUY8VeMRqFOPoz1OLmEFzonkpKHJphchNeVaOEpRrC",
+      "username": "lythat",
+      "id": 4
+    },
+    {
+      "email": "vothuy2@gmail.com",
+      "password": "$2a$10$TgC7/VoqjTEOdZCFT.ozZO.JF0gEj3MvOdKWygNk.iRV/URhzFz9u",
+      "username": "vothuy",
+      "id": 5
     }
   ]
 }

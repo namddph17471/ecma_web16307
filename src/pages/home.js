@@ -6,7 +6,10 @@ import Footer from "../components/footer";
 const HomePage = {
     async render() {
         return /* html */`
-        ${Header.render()}
+        
+        <div id="header">
+            ${Header.render()}
+        </div>
             <div class="max-w-5xl mx-auto">
                 <div class="banner">
                    ${Banner.render()}

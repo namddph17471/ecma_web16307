@@ -7,7 +7,7 @@ const NewList = {
         <div class="py-3">
             <h2 class="font-bold uppercase mb-4 text-2xl">Tin Tức nổi bật</h2>
             <div class="grid grid-cols-3 gap-8">
-            ${data.map((post) => `
+            ${data.map((post) =>/* html */ `
                 <div class="border-2 border-[#ccc] mx-auto py-[10px] px-[20px]">
                     <a href="/#/news/${post.id}"><img src="${post.img}" alt="" /></a>
                     <a href="/#/news/${post.id}">
@@ -25,9 +25,9 @@ const NewList = {
         <div class="py-3">
           <h2 class="font-bold uppercase mb-4 text-2xl">Hoạt Động sinh viên</h2>
           <div class="grid grid-cols-3 gap-8">
-            ${data.map((post) => `
-                <div class="border-2 border-[#ccc] mx-auto py-[10px] px-[20px]">
-                    <a href="/#/news/${post.id}"><img src="${post.img}" alt="" /></a>
+            ${data.map((post) =>/* html */ `
+                <div class="border-2 border-[#ccc] mx-auto py-[10px] px-[20px] ">
+                    <a  href="/#/news/${post.id}"><img src="${post.img}" alt="" /></a>
                     <a href="/#/news/${post.id}">
                     <h4 class="text-orange-700 font-bold py-2">
                     ${post.title}

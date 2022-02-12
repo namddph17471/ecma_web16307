@@ -1,6 +1,8 @@
+import toastr from "toastr";
 import { signin } from "../api/user";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import "toastr/build/toastr.min.css";
 
 const Signin = {
     render() {
@@ -65,15 +67,25 @@ const Signin = {
     },
     afterRender() {
         const formSignin = document.querySelector("#form-signin");
-        formSignin.addEventListener("submit", (e) => {
+        formSignin.addEventListener("submit", async (e) => {
             e.preventDefault();
-            signin({
-                email: document.querySelector("#email").value,
-                password: document.querySelector("#password").value,
-            }).then(() => {
-                alert("Bạn đã đăng nhập thành công");
-                window.location.href = "/#/";
-            });
+            try {
+                const { data } = await signin({
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value,
+                });
+                localStorage.setItem("user", JSON.stringify(data.user));
+                toastr.success("Đăng nhập thành công");
+                setTimeout(() => {
+                    if (data.user.username === "admin" && data.user.email === "admin@gmail.com") {
+                        document.location.href = "/#/admin/dashboard";
+                    } else {
+                        document.location.href = "/#/";
+                    }
+                }, 1000);
+            } catch (error) {
+                toastr.error(error.response.data);
+            }
         });
     },
 };

@@ -1,10 +1,10 @@
-import axios from "axios";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { get } from "../api/post";
 
 const DetailNewPage = {
     async render(id) {
-        const { data } = await axios.get(`http://localhost:3001/posts/${id}`);
+        const { data } = await get(id);
 
         return `
         ${Header.render()}

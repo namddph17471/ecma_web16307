@@ -1,5 +1,7 @@
+import toastr from "toastr";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import "toastr/build/toastr.min.css";
 import { signup } from "../api/user";
 
 const Signup = {
@@ -58,16 +60,28 @@ const Signup = {
     },
     afterRender() {
         const formSignup = document.querySelector("#form-signup");
-        formSignup.addEventListener("submit", (e) => {
+        formSignup.addEventListener("submit", async (e) => {
             e.preventDefault();
-            signup({
-                username: document.querySelector("#user_name").value,
-                email: document.querySelector("#email").value,
-                password: document.querySelector("#password").value,
-            }).then(() => {
-                alert("Bạn đã đăng ký thành công");
-                window.location.href = "/#/";
-            });
+            // signup({
+            //     username: document.querySelector("#user_name").value,
+            //     email: document.querySelector("#email").value,
+            //     password: document.querySelector("#password").value,
+            // }).then(() => {
+            //     alert("Bạn đã đăng ký thành công");
+            //     window.location.href = "/#/";
+            // });
+            try {
+                const { data } = await signup({
+                    username: document.querySelector("#user_name").value,
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value,
+                });
+                localStorage.setItem("user", JSON.stringify(data.user));
+                toastr.success("Đăng ký thành công");
+                document.location.href = "/#/signin";
+            } catch (error) {
+                toastr.error(error.response.data);
+            }
         });
     },
 };
