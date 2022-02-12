@@ -77,7 +77,7 @@ const Signin = {
                 localStorage.setItem("user", JSON.stringify(data.user));
                 toastr.success("Đăng nhập thành công");
                 setTimeout(() => {
-                    if (data.user.username === "admin" && data.user.email === "admin@gmail.com") {
+                    if (data.user.id === 1) {
                         document.location.href = "/#/admin/dashboard";
                     } else {
                         document.location.href = "/#/";
