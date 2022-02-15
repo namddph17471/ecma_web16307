@@ -24,6 +24,9 @@ const Header = {
         <li>
           <a class="new-item" href="/#/news">Tin Tức</a>
         </li>
+        <li>
+          <a class="new-item" href="/#/cart">Giỏ Hàng</a>
+        </li>
       </ul>
       
       ${localStorage.getItem("user") ?/* html */ `

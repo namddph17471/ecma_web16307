@@ -14,6 +14,7 @@ import Signup from "./pages/signup";
 import "toastr/build/toastr.min.css";
 import ProductPage from "./pages/product";
 import DetailProductPage from "./pages/product/detailProduct";
+import CartPage from "./pages/cart/cart";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const print = async (content, id) => {
@@ -51,6 +52,8 @@ router.on({
     // signup signin
     "/signin": () => print(Signin),
     "/signup": () => print(Signup),
+    // cart
+    "/cart": () => print(CartPage),
     // admin
     "/admin/dashboard": () => print(DashboardPage),
     "/admin/news": () => print(AdminNewsPage),

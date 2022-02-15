@@ -5,6 +5,7 @@ import Header from "../../components/header";
 import "toastr/build/toastr.min.css";
 import { addToCart } from "../../utils/cart";
 import { $ } from "../../utils/index";
+import { reRender } from "../../utils/rerender";
 
 const DetailProductPage = {
     async render(id) {
@@ -28,8 +29,10 @@ const DetailProductPage = {
     afterRender(id) {
         $("#btnAddToCart").addEventListener("click", async () => {
             const { data } = await get(id);
-            addToCart({ ...data, quantity: 1 });
-            toastr.success(`Thêm ${data.name} vào giỏ hàng thành công`);
+            addToCart({ ...data, quantity: 1 }, () => {
+                toastr.success(`Thêm ${data.name} vào giỏ hàng thành công`);
+                reRender(DetailProductPage, "#app");
+            });
         });
     },
 };
