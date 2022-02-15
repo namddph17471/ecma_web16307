@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": "9",
-      "title": "đã sửa",
-      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644489668/ikh35qqoo6cgrpx2u8dy.jpg",
+      "title": "Sửa tiêu đề 1",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644663651/tafxgplxaqoifwavf8x1.jpg",
       "desc": "js,cnbkalhcalmn zxkcjs"
     },
     {
@@ -18,6 +18,29 @@
       "title": "vô thủy",
       "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644490041/s2w7plojxrbf9beagykf.jpg",
       "desc": "đại hải thật"
+    },
+    {
+      "title": "Bài viết không có tiêu đề",
+      "img": "http://res.cloudinary.com/namddph17471/image/upload/v1644664121/amzspjxmuqe8zfajkqmd.jpg",
+      "desc": "akjchlacacmc;lá;ọaljkccvknkzlksakkjjb",
+      "id": "UmTrkUD"
+    }
+  ],
+  "products":[
+    {
+      "name": "Sản phẩm 01",
+      "price": "100",
+      "id": "1"
+    },
+    {
+      "name": "Sản phẩm 02",
+      "price": "200",
+      "id": "2"
+    },
+    {
+      "name": "Sản phẩm 03",
+      "price": "300",
+      "id": "3"
     }
   ],
   "users": [
@@ -50,6 +73,12 @@
       "password": "$2a$10$TgC7/VoqjTEOdZCFT.ozZO.JF0gEj3MvOdKWygNk.iRV/URhzFz9u",
       "username": "vothuy",
       "id": 5
+    },
+    {
+      "email": "tukhuyet@gmail.com",
+      "password": "$2a$10$0uCwfEK916zKUgat1dnms.v4UHX74z8wX45aUB5VKqVIDJ.rXxbDC",
+      "username": "lythatda",
+      "id": 6
     }
   ]
 }

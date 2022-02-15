@@ -9,10 +9,11 @@ import EditNewPage from "./pages/admin/news/edit";
 import DetailNewPage from "./pages/detailNew";
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
-import ProductPage from "./pages/products";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
 import "toastr/build/toastr.min.css";
+import ProductPage from "./pages/product";
+import DetailProductPage from "./pages/product/detailProduct";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const print = async (content, id) => {
@@ -23,15 +24,16 @@ router.on("/admin/*", () => {}, {
     before: (done) => {
         if (localStorage.getItem("user")) {
             const userId = JSON.parse(localStorage.getItem("user")).id;
+            const userEmail = JSON.parse(localStorage.getItem("user")).email;
             // const userName = JSON.parse(localStorage.getItem("user")).username;
-            if (userId === 1) {
-                toastr.success("Chào mừng đến với Admin");
+            if (userId === 1 && userEmail === "admin@gmail.com") {
                 done();
             } else {
                 toastr.warning("Bạn không được phép vào trang Admin");
                 document.location.href = "/#/";
             }
         } else {
+            toastr.warning("Bạn không được phép vào trang Admin");
             document.location.href = "/#/";
         }
     },
@@ -39,15 +41,17 @@ router.on("/admin/*", () => {}, {
 router.on({
     "/": () => print(HomePage),
     "/about": () => print(AboutPage),
+    // product
+    "/products": () => print(ProductPage),
+    "/products/:id": ({ data }) => print(DetailProductPage, data.id),
 
-    "/product": () => print(ProductPage),
-
+    // new
     "/news": () => print(NewsPage),
-
     "/news/:id": ({ data }) => print(DetailNewPage, data.id),
+    // signup signin
     "/signin": () => print(Signin),
     "/signup": () => print(Signup),
-
+    // admin
     "/admin/dashboard": () => print(DashboardPage),
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/add": () => print(AddNewsPage),

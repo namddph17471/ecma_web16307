@@ -1,8 +1,8 @@
 import toastr from "toastr";
 import { signin } from "../api/user";
 import Footer from "../components/footer";
-import Header from "../components/header";
 import "toastr/build/toastr.min.css";
+import Header from "../components/header";
 
 const Signin = {
     render() {
@@ -75,7 +75,7 @@ const Signin = {
                     password: document.querySelector("#password").value,
                 });
                 localStorage.setItem("user", JSON.stringify(data.user));
-                toastr.success("Đăng nhập thành công");
+                toastr.success("Chúc mừng bạn đã đăng nhập thành công");
                 setTimeout(() => {
                     if (data.user.id === 1) {
                         document.location.href = "/#/admin/dashboard";

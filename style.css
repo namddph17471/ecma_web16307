@@ -2,5 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 .new-item{
-  @apply mx-4 text-white hover:underline decoration-1;
+  @apply mx-4 text-white hover:underline  decoration-1 ;
 }
