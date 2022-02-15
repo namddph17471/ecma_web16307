@@ -10,5 +10,8 @@ const NewsPage = {
         ${Footer.render()}
         `;
     },
+    afterRender() {
+        Header.afterRender();
+    },
 };
 export default NewsPage;

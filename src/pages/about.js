@@ -8,5 +8,8 @@ const AboutPage = {
         <h1>About Page</h1>
         ${Footer.render()}`;
     },
+    afterRender() {
+        Header.afterRender();
+    },
 };
 export default AboutPage;
