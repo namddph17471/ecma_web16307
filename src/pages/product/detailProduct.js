@@ -1,6 +1,10 @@
+import toastr from "toastr";
 import { get } from "../../api/product";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
+import "toastr/build/toastr.min.css";
+import { addToCart } from "../../utils/cart";
+import { $ } from "../../utils/index";
 
 const DetailProductPage = {
     async render(id) {
@@ -20,6 +24,13 @@ const DetailProductPage = {
         </div>
         ${Footer.render()}
         `;
+    },
+    afterRender(id) {
+        $("#btnAddToCart").addEventListener("click", async () => {
+            const { data } = await get(id);
+            addToCart({ ...data, quantity: 1 });
+            toastr.success(`Thêm ${data.name} vào giỏ hàng thành công`);
+        });
     },
 };
 export default DetailProductPage;
