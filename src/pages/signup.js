@@ -85,6 +85,7 @@ const Signup = {
                 toastr.error(error.response.data);
             }
         });
+        Header.afterRender();
     },
 };
 export default Signup;

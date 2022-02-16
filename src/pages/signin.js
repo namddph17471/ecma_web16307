@@ -68,27 +68,34 @@ const Signin = {
         `;
     },
     afterRender() {
-        const formSignin = document.querySelector("#form-signin");
-        formSignin.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            try {
-                const { data } = await signin({
-                    email: document.querySelector("#email").value,
-                    password: document.querySelector("#password").value,
-                });
-                localStorage.setItem("user", JSON.stringify(data.user));
-                toastr.success("Chúc mừng bạn đã đăng nhập thành công");
-                setTimeout(() => {
-                    if (data.user.id === 1) {
-                        document.location.href = "/#/admin/dashboard";
-                    } else {
-                        document.location.href = "/#/";
-                    }
-                }, 1000);
-            } catch (error) {
-                toastr.error(error.response.data);
-            }
-        });
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user) {
+            toastr.warning("Bạn đã đăng nhập rồi !!!");
+            document.location = "/#/";
+        } else {
+            const formSignin = document.querySelector("#form-signin");
+            formSignin.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                try {
+                    const { data } = await signin({
+                        email: document.querySelector("#email").value,
+                        password: document.querySelector("#password").value,
+                    });
+                    localStorage.setItem("user", JSON.stringify(data.user));
+                    toastr.success("Chúc mừng bạn đã đăng nhập thành công");
+                    setTimeout(() => {
+                        if (data.user.id === 1) {
+                            document.location.href = "/#/admin/dashboard";
+                        } else {
+                            document.location.href = "/#/";
+                        }
+                    }, 1000);
+                } catch (error) {
+                    toastr.error(error.response.data);
+                }
+            });
+            Header.afterRender();
+        }
     },
 };
 export default Signin;
