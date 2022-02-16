@@ -8,7 +8,9 @@ const CartPage = {
     async render() {
         const cart = JSON.parse(localStorage.getItem("cart"));
         return /* html */ `
-            ${Header.render()}
+                <div id ="header"> 
+                  ${Header.render()}
+                </div>
                     <main>
                         <div class="max-w-7xl mx-auto py-6 ">
                             <div class="px-4 py-3 sm:px-0">
@@ -98,12 +100,9 @@ const CartPage = {
                     decreaseProduct(id);
                     reRender(CartPage, "#app");
                 } else {
-                    const confirm = window.confirm("Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?");
-                    if (confirm) {
-                        removeProduct(id, () => {
-                            reRender(CartPage, "#app");
-                        });
-                    }
+                    removeProduct(id, () => {
+                        reRender(CartPage, "#app");
+                    });
                 }
             });
         });

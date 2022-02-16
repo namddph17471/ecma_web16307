@@ -4,7 +4,9 @@ import Footer from "../components/footer";
 const AboutPage = {
     render() {
         return `
-        ${Header.render()}
+        <div id ="header"> 
+            ${Header.render()}
+        </div>
         <h1>About Page</h1>
         ${Footer.render()}`;
     },

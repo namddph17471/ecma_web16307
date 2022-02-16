@@ -7,7 +7,9 @@ import { signup } from "../api/user";
 const Signup = {
     render() {
         return /* html */ `
-        ${Header.render()}
+        <div id ="header"> 
+          ${Header.render()}
+        </div>
             <h1 class="font-bold uppercase mb-4 text-2xl my-8 text-center text-indigo-600">Đăng Ký Tài Khoản</h1>
             <div class="min-h-full flex items-center justify-center py-3 px-4 sm:px-6 lg:px-8">
                 <div class="max-w-md w-full space-y-4">

@@ -5,7 +5,9 @@ import ProductList from "../../components/ProductList";
 const ProductPage = {
     async render() {
         return `
+        <div id ="header"> 
         ${Header.render()}
+        </div>
             ${await ProductList.render()}
         ${Footer.render()}
         `;

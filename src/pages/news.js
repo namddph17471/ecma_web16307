@@ -4,8 +4,10 @@ import Header from "../components/header";
 
 const NewsPage = {
     async render() {
-        return `
+        return /* html */`
+        <div id ="header"> 
         ${Header.render()}
+        </div>
             ${await NewList.render()}
         ${Footer.render()}
         `;

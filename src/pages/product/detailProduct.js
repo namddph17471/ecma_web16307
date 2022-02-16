@@ -12,7 +12,9 @@ const DetailProductPage = {
         const { data } = await get(id);
 
         return /* html */`
-        ${Header.render()}
+        <div id ="header"> 
+            ${Header.render()}
+        </div>
         <div class="max-w-5xl mx-auto">
             <h1 class="font-bold uppercase mb-4 text-2xl">${data.name}</h1>
             <img src="${data.img}" />
