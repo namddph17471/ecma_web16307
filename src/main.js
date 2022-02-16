@@ -15,6 +15,9 @@ import "toastr/build/toastr.min.css";
 import ProductPage from "./pages/product";
 import DetailProductPage from "./pages/product/detailProduct";
 import CartPage from "./pages/cart/cart";
+import AdminProductPage from "./pages/admin/product";
+import AddProductPage from "./pages/admin/product/add";
+import EditProductPage from "./pages/admin/product/edit";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const print = async (content, id) => {
@@ -56,10 +59,15 @@ router.on({
     "/cart": () => print(CartPage),
     // admin
     "/admin/dashboard": () => print(DashboardPage),
+    // admin new
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/add": () => print(AddNewsPage),
     "/admin/news/edit/:id": ({ data }) => print(EditNewPage, data.id),
     "/admin/news/delete/:id": ({ data }) => print(DeleteNewPage, data.id),
+    // admin product
+    "/admin/products": () => print(AdminProductPage),
+    "/admin/products/add": () => print(AddProductPage),
+    "/admin/products/edit/:id": ({ data }) => print(EditProductPage, data.id),
 
 });
 router.resolve();
