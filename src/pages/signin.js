@@ -70,8 +70,8 @@ const Signin = {
     afterRender() {
         const user = JSON.parse(localStorage.getItem("user"));
         if (user) {
-            toastr.warning("Bạn đã đăng nhập rồi !!!");
             document.location = "/#/";
+            toastr.warning("Bạn đã đăng nhập rồi !!!");
         } else {
             const formSignin = document.querySelector("#form-signin");
             formSignin.addEventListener("submit", async (e) => {

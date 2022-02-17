@@ -45,7 +45,7 @@ const EditProductPage = {
                                       Giá
                                     </label>
                                     <div class="mt-1">
-                                    <input id="name" type="text" value="${data.price}"  class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="">
+                                    <input id="price" type="text" value="${data.price}"  class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="">
                                     </div>
                                 </div>
                             </div>
@@ -68,8 +68,19 @@ const EditProductPage = {
         const CLOUDINARY_PRESET = "nw9blvdh";
         formEdit.addEventListener("submit", async (e) => {
             e.preventDefault();
+            if (imgPost.value === "") {
+                const { data } = await get(id);
+                update({
+                    id,
+                    name: document.querySelector("#name").value,
+                    img: data.img,
+                    price: document.querySelector("#price").value,
+                }).then(() => {
+                    alert("Bạn đã sửa  thành công");
+                    document.location.href = "/#/admin/products";
+                });
+            }
             const file = imgPost.files[0];
-
             const formData = new FormData();
             formData.append("file", file);
             formData.append("upload_preset", CLOUDINARY_PRESET);

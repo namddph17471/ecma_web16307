@@ -18,17 +18,17 @@ const DetailProductPage = {
         <div class="max-w-5xl mx-auto">
             <h1 class="m-3 font-bold uppercase mb-4 text-2xl">${data.name}</h1>
             <img src="${data.img}" />
-            <div class="">
-                <label for="about" class="m-3 block text-sm font-medium text-gray-700">
+            <div class="inline-block">
+                <label for="about" class="m-3  text-xl font-medium text-gray-700">
                     Giá
                 </label>
-                <p>${data.price}</p>
+                <span class="text-xl">${data.price}</span>
             </div>
             <div class="mt-1">
-                <label for="about" class="inline-block m-3 block text-sm font-medium text-gray-700">
+                <label for="about" class="inline-block m-3  text-xl font-medium text-gray-700">
                     Số lượng
                 </label>
-                <input id="quantity" type="number"  class="shadow-sm w-[50px] focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="">
+                <input id="quantity" type="number"  class="inline shadow-sm w-[50px] focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="">
             </div>
             <button
             id="btnAddToCart"

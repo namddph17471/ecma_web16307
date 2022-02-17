@@ -4,7 +4,6 @@ import AboutPage from "./pages/about";
 import DashboardPage from "./pages/admin/dashboard";
 import AdminNewsPage from "./pages/admin/news";
 import AddNewsPage from "./pages/admin/news/add";
-import DeleteNewPage from "./pages/admin/news/delete";
 import EditNewPage from "./pages/admin/news/edit";
 import DetailNewPage from "./pages/detailNew";
 import HomePage from "./pages/home";
@@ -63,7 +62,6 @@ router.on({
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/add": () => print(AddNewsPage),
     "/admin/news/edit/:id": ({ data }) => print(EditNewPage, data.id),
-    "/admin/news/delete/:id": ({ data }) => print(DeleteNewPage, data.id),
     // admin product
     "/admin/products": () => print(AdminProductPage),
     "/admin/products/add": () => print(AddProductPage),
